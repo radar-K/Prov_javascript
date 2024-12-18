@@ -1,0 +1,70 @@
+
+
+Övning 1: Skapa en array och hämta värden
+Skapa en array som innehåller fem olika frukter (t.ex. "äpple", "banan", "kiwi", "päron", "druvor").
+Skriv en funktion som returnerar den första och den sista frukten i arrayen.
+
+Övning 2: Lägg till och ta bort element
+Använd metoden push() för att lägga till en ny frukt till arrayen från övning 1.
+Använd metoden pop() för att ta bort den sista frukten i arrayen.
+Skriv en funktion som skriver ut den uppdaterade arrayen.
+
+Övning 3: Loop och modifiera
+Skapa en array med siffrorna 1 till 5.
+Använd metoden map() för att skapa en ny array som innehåller kvadraterna av varje siffra.
+Skriv en funktion som skriver ut den nya arrayen.
+
+
+<script>
+
+    const fruit = ["äpple", "banan", "kiwi", "päron", "druvor"];
+    
+    function firstAndLast (fruit){
+     const firstFruit = fruit.slice(0,1)[0];
+     const lastFruit = fruit.slice(-1)[0];
+     return lastFruit + " " + firstFruit;
+    };
+    console.log(firstAndLast(fruit));
+    
+    fruit.push('mango')
+    const bortagenfrukt = fruit.pop(fruit)
+    
+    const nyArray = fruit.slice();
+    const shiftFörstaIndex = nyArray.shift();
+    
+    console.log(fruit);
+    console.log(bortagenfrukt);
+    console.log(nyArray);
+    
+    function taBortLäggTill(frutteTutte){
+        frutteTutte.shift()
+        frutteTutte.push('en god frukt');
+        return frutteTutte;
+    };
+    
+    console.log(taBortLäggTill(fruit));
+    
+    </script>
+
+Övning 4: Filtrera element
+Skapa en array med olika heltal (t.ex. [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).
+Använd metoden filter() för att skapa en ny array som bara innehåller de jämna talen.
+Skriv en funktion som skriver ut den nya arrayen.
+<script>
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+</script>
+Övning 5: Sammanfoga arrays
+Skapa två array med olika frukter (t.ex. ["äpple", "banan"] och ["kiwi", "päron"]).
+Använd metoden concat() för att sammanfoga dessa två arrays till en ny array.
+Skriv en funktion som skriver ut den sammanfogade arrayen.
+Övning 6: Hitta element
+Använd arrayen från övning 4.
+Skriv en funktion som använder metoden find() för att hämta det första talet som är större än 5.
+Skriv en funktion som skriver ut det hittade talet.
+Övning 7: Sortera en array
+Skapa en array med olika strängar (t.ex. ["banan", "äpple", "kiwi", "druvor"]).
+Använd metoden sort() för att sortera arrayen i alfabetisk ordning.
+Skriv en funktion som skriver ut den sorterade arrayen.

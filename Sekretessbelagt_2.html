@@ -1,0 +1,190 @@
+----------------------------------------------------------------------------------
+I JavaScript är filter() en metod som används på arrayer för att skapa en ny
+ array som innehåller endast de element som uppfyller ett visst villkor.
+
+ map() används för att transformera varje element i en array genom att applicera
+en funktion på det. Resultatet blir en ny array där varje element har "mappats om" 
+(dvs. förändrats) baserat på funktionen, men alla ursprungliga element är kvar.
+
+
+function filterAgeAndUpperCase(people) {
+    return people
+      .filter(person => person.age >= 18)  // Filtrera ut personer som är 18 eller äldre
+      .map(person => person.name.toUpperCase());  // Omvandla namnen till versaler
+  }
+----------------------------------------------------------------------------------
+
+<script> 
+/* items är en array. Varje element i arrayen är ett objekt
+ som har nycklar (name och price) och tillhörande värden. */
+ 
+const items = [
+    { name: 'Redbull',    price: 10 },
+    { name: 'Chips',      price: 30  },
+    { name: 'Marabou',    price: 30  },
+    { name: 'Mc donalds', price: 104 },
+    { name: 'sushi',      price: 149 }
+]
+
+const newInfo = items 
+    .filter((item) => item.price <= 30) // Filtrera objekt med pris <= 30
+    .map((item) => item.name.toUpperCase()); // Omvandla namnen till versaler
+
+console.log(newInfo);
+________________________________________________________________
+
+const filteredItems = items.filter((item) => {
+    return item.price >= 20
+})
+
+console.log(filteredItems);
+console.log(items);
+
+const itemNames = items.map(() => {
+    return item.name 
+});
+
+const findItem = items.find(() => {
+    return item.name === 'sushi'
+});
+
+items.forEach((item) => {
+    console.log(item.name);
+});
+
+</script>
+
+
+----------------------------------------------------------------------------------
+Man vill använda some() när man vill kontrollera om minst ett element i en array
+uppfyller ett visst villkor. 
+----------------------------------------------------------------------------------
+<script>
+const usernames = ['user1', 'guest', 'admin'];
+const isUsernameTaken = usernames.some(username => username === 'admin');
+console.log(isUsernameTaken); // Output: true
+
+</script>
+
+
+
+
+----------------------------------------------------------------------------------
+Om du har en lista över resurser eller objekt och vill veta om någon av dem är i 
+ett specifikt tillstånd (som tillgänglig eller aktiv), är some() effektivt.
+----------------------------------------------------------------------------------
+<script>
+    const products = [ 
+        {name: 'Redbull',   stock: 10 },
+        {name: 'Chips',     stock: 0 },
+        {name: 'Sushi',     stock: 5}
+    ];
+
+    const isAnyOutOfStock = products.some(product => product.stock === 0);
+    console.log(isAnyOutOfStock); // Output: true
+
+</script>
+
+
+----------------------------------------------------------------------------------
+every() är en metod i JavaScript som används på arrayer för att kontrollera om alla
+element i en array uppfyller ett visst villkor. Om varje element uppfyller villkoret
+returnerar every() true; om minst ett element inte gör det, returnerar den false. 
+Den är användbar när du vill säkerställa att en viss egenskap eller kriterium gäller
+för hela arrayen.
+
+Skillnaden mellan every() och some()
+* every() returnerar true endast om alla element uppfyller villkoret.
+* some() returnerar true om minst ett element uppfyller villkoret.
+----------------------------------------------------------------------------------
+<script>
+
+const product = [ 
+        {name: 'Redbull',   stock: 10 },
+        {name: 'Chips',     stock: 8 },
+        {name: 'Sushi',     stock: 5}
+    ];
+
+    const hasinexpensiveItems = product.every((item) => {
+        return product.price <= 8
+    })
+    console.log(hasinexpensiveItems); // Output: false
+
+    
+</script>
+
+
+----------------------------------------------------------------------------------
+Kontrollerar om en array innehåller ett visst värde och returnerar true eller false.
+Används för att snabbt kontrollera närvaron av ett värde i en array.
+----------------------------------------------------------------------------------
+<script>
+const num = [1, 3, 4, 5];
+const includesNum = num.includes(3)
+console.log(includesNum); // true
+
+</script>
+
+
+----------------------------------------------------------------------------------
+Används för att reducera en array till ett enda värde, genom att applicera en funktion på varje element.
+array.reduce(callback(accumulator, currentValue, currentIndex, array), initialValue);
+----------------------------------------------------------------------------------
+
+<script>
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 10
+
+</script>
+
+
+S A M M A N F A T T N I N G 
+----------------------------------------------------------------------------------
+****  Datafiltrering och transformation: 
+Använd filter() och map() för att arbeta med och omvandla data.
+
+****  Validering och kontroll:
+Använd some() och every() för att snabbt utvärdera om villkor gäller för några 
+eller alla element.
+
+****  Sammanställning:
+Använd reduce() för att kombinera data till ett sammanfattande värde.
+
+****  Närvarokontroll: 
+Använd includes() för att kontrollera om ett specifikt värde finns i en array.
+
+----------------------------------------------------------------------------------
+
+
+push(): Lägger till ett eller flera element i slutet av en array.
+pop(): Tar bort det sista elementet och returnerar det.
+shift(): Tar bort det första elementet och returnerar det.
+unshift(): Lägger till ett eller flera element i början av en array.
+splice(): Lägger till eller tar bort element på en specifik position.
+slice(): Skapar en ny array som innehåller en delmängd av elementen.
+join(): Sammanfogar alla element till en sträng med en specifik separator.
+concat(): Slår samman två eller flera arrayer och returnerar en ny.
+find(): Returnerar det första elementet som uppfyller ett villkor.
+findIndex(): Returnerar indexet för det första elementet som uppfyller ett villkor.
+sort(): Sorterar elementen i arrayen.
+reverse(): Vänder ordningen på elementen.
+flat(): Utplattar en array med undermatriser till en viss djupnivå.
+forEach(): Kör en funktion för varje element i arrayen.
+
+<script filter word>
+    function removeVowels(word) {
+  const vowels = "aouåeiyäö";
+  
+  // Dela upp ordet, filtrera bort vokaler och slå ihop till en sträng
+
+  return word
+    .split("") // Dela upp ordet till en array av bokstäver
+    .filter(char => !vowels.includes(char)) // Filtrera bort vokaler
+    .join(""); // Slå ihop arrayen till en sträng
+}
+
+
+console.log(removeVowels("hej")); // Ska logga "hj"
+console.log(removeVowels("hallå")); // Ska logga "hll"
+</script>

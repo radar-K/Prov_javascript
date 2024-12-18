@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../Desktop/Titta inte här"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 8081,
+		"liveServer.settings.multiRootWorkspaceName": "fmw24_prov-main"
+	}
+}

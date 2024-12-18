@@ -1,0 +1,140 @@
+<script>
+  // <-------------------------------> // Array
+
+let selectedColor = ['röd','gul','svart','brun','hemligt']; // Skapa en array
+selectedColor[2] = 'nyfärg på det här indexet' // Byta ut innehåll i array
+console.log(selectedColor[4]); // skriver ut endbart det indexet i consolen
+console.log(selectedColor); // skriver ut hela arrayen
+
+console.log(selectedColor.length); // kollar längden på array          [pop = tabort, push=lägga till, osv ]
+selectedColor.splice(2,1, 'regnbåge') // start: Indexet där ändringen ska börja. deleteCount: Antalet element som ska tas bort + lägger till.  
+console.log(selectedColor);
+</script>
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+forEach() är en metod för att iterera över arrayelement och utföra åtgärder utan att behöva 
+hantera index manuellt. Den är särskilt användbar för att utföra funktioner på varje element, som att
+skriva ut, uppdatera eller bearbeta data.
+--------------------------------------------------------------------------------------------------------
+<script>
+
+// For Each
+
+const frukter = ['äpple', 'korv', 'fest'];
+frukter.forEach(function(fruit){
+console.log(`Jag gillar ${fruit}!`);
+});
+
+//Ett användbart exempel
+const produkter = [
+{ namn: "Äpple", pris: 10 },
+{ namn: "Banan", pris: 15 },
+{ namn: "Apelsin", pris: 12 }
+];
+// Variabel för att hålla den totala kostnaden
+let totalKostnad = 0;
+produkter.forEach(function(produkter){
+totalKostnad += produkter.pris; // Lägger till produktens pris till totalen
+});
+console.log(`Den totala kostnaden för produkterna är: ${totalKostnad} kr`);
+
+
+
+</script>
+-------------------------------------------------------------------------------------------
+En funktion i JavaScript är en block av kod som kan köras när den kallas (eller "anropas"). 
+Funktioner används för att organisera och återanvända kod.
+--------------------------------------------------------------------------------------------
+<script>
+
+// <------------------------------> // Function
+// return används bara inom en funktion
+
+function deklareraFunktion (parameter, parameter2){
+console.log('funktionen som hämtas' + ',sedan kan man ta emot ett' + ' ' + parameter + ' ' + parameter2);
+}
+deklareraFunktion('argument: ett värde som skickas till parametern', 'och här kommer ett nytt värde i parameter 2'); // hämta funktionen
+
+// Numerisk funktion
+function räkna (num1, num2){
+return num1 * num2;
+}
+console.log(räkna(2,2));
+// Eller hämta resultatet utan att logga den. 
+let resultat = räkna(2, 2);
+
+</script>
+
+<script>
+// <----------------------------> If statements
+// && = båda sidorna true,    || =  en sida måste vara true,     ^ = En sida måste vara true, men båda får ej vara true
+let hour = 10; 
+
+if (hour <= 6 && hour < 12 ) {
+console.log('Do this');
+} else if (hour === 11 || hour > 2) { 
+console.log('Otherwise do this');
+} else {
+console.log('If nothing is true do this');
+}
+
+
+
+
+
+
+
+
+</script>
+
+<script>
+// <----------------------------> Loops
+
+// 1. Initial Expression: Skapa & initialiseras en variabel som kommer att användas som loopens räknare. 
+// 2. Villkor/(Condition): Så länge villkoret är (true), kommer koden i loopen att köras
+// 3. Ökning/(Increment): Körs efter varje iteration av loopen. 
+
+for(let i = 0; i <= 5; i++){
+if (i % 2 !== 0) console.log(i); // modulus: kontrollerar om i är udda (inte jämnt delbart med 2). Om i är udda, skriver console.log(i); ut värdet.
+}
+
+username = ''; //  tom sträng = false, ifyllt = true. 
+do {
+console.log('Den här texten skrivs alltid ut');
+// kan skriva if satser i do while.
+} while (username === true){
+console.log(`Hej ditt användarnamn är ${username}`);
+}
+
+const names = ['john', 'bob', 'märta'];
+for (name of names) console.log(name); // saktare än en vanlig for loop men funkar på enklare kod
+
+const user = {firstname: 'john', lastname: 'doe'}; // skapa ett objekt
+console.log(user.firstname); //komma åt värdena i user-objektet med punktnotation = 'john'
+for (key in user) console.log(user[key]); // for...in-loop används för att iterera över alla egenskaper i ett objekt
+
+
+
+</script>
+------------------------------------------------------------------------------------------------------
+Typkonvertering i JavaScript syftar på processen där en typ av värde konverteras till en annan typ. 
+Detta kan ske antingen implicit (automatiskt) eller explicit (genom programmerarens kod).
+
+* Implicit typkonvertering sker automatiskt av JavaScript när en operation involverar olika datatyper.
+* Explicit typkonvertering görs av programmeraren och kan göras med hjälp av olika metoder ex.
+Number(), parseInt(), eller parseFloat() för att konvertera en sträng till ett tal.
+
+-----------------------------------------------------------------------------------------------------------
+<script>
+// <-----------------------------> Typkonvertering 
+let str = 'hello';
+let isTrue = Boolean(str);''
+
+let num = 123;
+let strNum = String(num); 
+</script>
